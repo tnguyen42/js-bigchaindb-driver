@@ -40,7 +40,7 @@ To do so, you need to pass the **app_id and app_key**.
 
 .. code-block:: js
 
-	let bdb = new driver.Connection('https://test.bigchaindb.com/api/v1/', {
+	let conn = new driver.Connection('https://test.bigchaindb.com/api/v1/', {
 		app_id: 'Get one from testnet.bigchaindb.com',
 		app_key: 'Get one from testnet.bigchaindb.com'
 	})
@@ -367,9 +367,10 @@ Recap: Asset Creation & Transfer
 		})
 		.then(res => {
 			console.log('Response from BDB server:', res)
-			return res.id
+			return res
 		})
 		.then(tx => {
+			console.log('Response from BDB server:', res)
 			console.log('Is Bob the owner?', tx['outputs'][0]['public_keys'][0] == bob.publicKey)
 			console.log('Was Alice the previous owner?', tx['inputs'][0]['owners_before'][0] == alice.publicKey )
 		})
