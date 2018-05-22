@@ -40,7 +40,7 @@ To do so, you need to pass the **app_id and app_key**.
 
 .. code-block:: js
 
-	let bdb = new driver.Connection('https://test.bigchaindb.com/api/v1/', {
+	let conn = new driver.Connection('https://test.bigchaindb.com/api/v1/', {
 		app_id: 'Get one from testnet.bigchaindb.com',
 		app_key: 'Get one from testnet.bigchaindb.com'
 	})
